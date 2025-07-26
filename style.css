@@ -46,10 +46,14 @@ body {
 .img {
     width: 190px;
 }
-.btn-distance{
+
+.btn-distance {
     display: flex;
-    gap :8px;
+    gap: 8px;
 }
+
+
+
 .btn {
     border-radius: 6px;
     padding: 8px 18px;
@@ -82,6 +86,12 @@ body {
     padding: 0 30px;
 }
 
+.error-message {
+    color: black;
+    background-color: white;
+    font-size: 14px;
+    margin-top: -20px;
+}
 .hero> :nth-child(1) {
     font-weight: 900;
     font-size: 48px;
@@ -137,7 +147,7 @@ body {
     max-width: 70vw;
     margin: auto;
     color: white;
-    
+
 }
 
 .first div>:nth-child(1) {
@@ -174,13 +184,15 @@ body {
 }
 
 
-/* if do not want to change svg */
-/* .faqbox svg {
-    filter: invert(1);
-} */
+.faq {
+    margin: 40px auto;
+}
+
+.faq {
+    margin: 40px auto;
+}
 
 .faqQuestions {
-    transition: all 1s ease-out;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -188,13 +200,51 @@ body {
     max-width: 60vw;
     padding: 24px;
     font-size: 24px;
-    margin: 34px auto;
+    margin: 20px auto 0;
     cursor: pointer;
+    border-bottom: 1px solid black;
+    transition: all 1s ease-out;
+}
+
+.plusIcon {
+    /* Only transition, no transform yet */
+    transition: transform 0.3s ease;
+}
+
+.faqAnswer {
+    max-width: 60vw;
+    margin: 0 auto;
+    color: white;
+    font-size: 20px;
+    background-color: #2d2d2d;
+    padding: 0 20px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.faqAnswer.show {
+    max-height: 500px;
+    padding: 20px;
 }
 
 .faqQuestions:hover {
     background-color: #414141;
     color: white;
+}
+
+
+.faqQuestions:hover {
+    background-color: #414141;
+    color: white;
+}
+
+.plusIcon {
+    transition: transform 0.3s ease;
+}
+
+.plusIcon.rotate {
+    transform: rotate(45deg);
 }
 
 .footer {
@@ -210,7 +260,7 @@ body {
     padding-bottom: 34px;
     text-align: left;
     max-width: 60vw;
-    margin: auto;           
+    margin: auto;
 }
 
 a {
@@ -221,7 +271,7 @@ a {
 .items {
     padding: 23px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 22px;
 }
 
@@ -232,9 +282,10 @@ a {
 }
 
 @media screen and (max-width :1300px) {
-    .nav{
+    .nav {
         max-width: 90vw;
     }
+
     .hero> :nth-child(1) {
         font-size: 32px;
     }
@@ -246,43 +297,47 @@ a {
     .hero> :nth-child(3) {
         font-size: 18px;
     }
-    .hero-btn{
+
+    .hero-btn {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 16px;
     }
+
     .first {
         flex-wrap: wrap;
         padding: 34px;
     }
+
     .secImg img {
         width: 355px;
     }
 
     .secImg video {
-        width: 255px;    
+        width: 255px;
     }
 
-    .faq h1{
+    .faq h1 {
         font-size: 32px;
         text-align: center;
         padding-top: 34px;
     }
+
     .items {
         padding: 23px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 29px;
     }
-    .footer{
+
+    .footer {
         max-width: 90vw;
         padding: 75px 0;
     }
-    .footer-items{
+
+    .footer-items {
         text-align: center;
     }
-    
-
 }
