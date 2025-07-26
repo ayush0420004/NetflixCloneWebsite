@@ -281,6 +281,192 @@ a {
     gap: 26px;
 }
 
+.trending-section {
+  padding: 40px 20px;
+  background-color: #000;
+  color: white;
+}
+
+.trending-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 calc(100% / 6 - 10px); /* 6 cards per row */
+  margin: 5px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Rank styling for all */
+.rank {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  -webkit-text-stroke: 1px white; /* black border */
+  font-family: 'Arial Black', sans-serif;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+
+
+.arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+/* Trending Now Section */
+.trending-section {
+  background-color: black;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.trending-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Wrapper with arrows */
+.trending-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Scrollable container */
+.trending-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  scrollbar-width: none; /* Firefox */
+}
+
+.trending-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Cards */
+.card {
+  position: relative;
+  min-width: 200px;
+  height: 300px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #222;
+  cursor: pointer;
+
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05); /* Slight pop up */
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rank number */
+.card .rank {
+  position: absolute;
+    bottom: -26px;
+    left: -6px;
+    
+    color: black;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 5.2rem;
+
+}
+
+
+/* Scroll buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+/* Responsive for small screens */
+
+
+@media (max-width: 480px) {
+  .card {
+    min-width: 120px;
+    height: 180px;
+  }
+}
+
+
 @media screen and (max-width :1300px) {
     .nav {
         max-width: 90vw;
@@ -340,4 +526,8 @@ a {
     .footer-items {
         text-align: center;
     }
+    .card {
+    min-width: 150px;
+    height: 225px;
+  }
 }
